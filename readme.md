@@ -5,4 +5,5 @@
     2、获取本地配置的两种方法:
                     （1）、$environment = app()->environment();
                     （2）、getenv('APP_ENV')
-        
+    3、移动User.php 模型位置到 Models 时需要把 config/auth.php 
+     'model' => App\User::class,改为'model' => App\Models\User::class,    

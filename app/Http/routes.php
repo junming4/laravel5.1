@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return $environment = app()->environment() .'||'.getenv('APP_ENV');
 });
+
+
+Route::get('article','ArticleController@index');

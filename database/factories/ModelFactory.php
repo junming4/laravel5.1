@@ -22,7 +22,7 @@ $factory->define(\App\Models\User::class, function ($faker) {
 
 $factory->define(\App\Models\Article::class, function ($faker) {
     return [
-        'user_id' => 1,
+        'user_id' => 2,
         'title' => $faker->word(3),
         'body' => $faker->paragraph(3),
     ];

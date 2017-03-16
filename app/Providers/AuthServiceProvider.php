@@ -11,6 +11,7 @@ class AuthServiceProvider extends ServiceProvider
 
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Models\Article' => 'App\Policies\ArticlePolicy',
     ];
     /**
      * Bootstrap the application services.
