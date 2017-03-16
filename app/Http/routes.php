@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return $environment = app()->environment() .'||'.getenv('APP_ENV');
 });
