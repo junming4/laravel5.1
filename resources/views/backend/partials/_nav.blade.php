@@ -61,53 +61,71 @@
             <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                 <span class="ng-scope">分类</span>
             </li>
-            <li>
-                <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span
+            <li @if(Request::is('admin/mail/*')) class="active" @endif>
+                <a href="{{ route('admin.mail.index') }}"><i class="fa fa-envelope"></i> <span
+                            class="nav-label">信箱 </span><span
                             class="label label-warning pull-right">16</span></a>
                 <ul class="nav nav-second-level">
-                    <li><a class="J_menuItem" href="mailbox.html">收件箱</a>
+                    <li @if(Request::is('admin/mail/index')) class="active" @endif><a class="J_menuItem"
+                                                                                      href="{{ route('admin.mail.index') }}">收件箱</a>
                     </li>
-                    <li><a class="J_menuItem" href="mail_detail.html">查看邮件</a>
+                    <li @if(Request::is('admin/mail/show')) class="active" @endif><a class="J_menuItem"
+                                                                                     href="{{ route('admin.mail.show') }}">查看邮件</a>
                     </li>
-                    <li><a class="J_menuItem" href="mail_compose.html">写信</a>
+                    <li @if(Request::is('admin/mail/create')) class="active" @endif><a class="J_menuItem"
+                                                                                       href="{{ route('admin.mail.create') }}">写信</a>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span
-                            class="fa arrow"></span></a>
+
+            {{--表单部分--}}
+            <li @if(Request::is('admin/form/*')) class="active" @endif>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-edit"></i>
+                    <span class="nav-label">表单</span><span class="fa arrow"></span>
+                </a>
                 <ul class="nav nav-second-level">
-                    <li><a class="J_menuItem" href="form_basic.html">基本表单</a>
+                    <li @if(Request::is('admin/form/basic')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.form.basic') }}">基本表单</a>
                     </li>
-                    <li><a class="J_menuItem" href="form_validate.html">表单验证</a>
+                    <li @if(Request::is('admin/form/validates')) class="active" @endif><a class="J_menuItem" href="{{ route('admin.form.validates') }}">表单验证</a>
                     </li>
-                    <li><a class="J_menuItem" href="form_advanced.html">高级插件</a>
+                    <li @if(Request::is('admin/form/advanced')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.form.advanced') }}">高级插件</a>
                     </li>
-                    <li><a class="J_menuItem" href="form_wizard.html">表单向导</a>
+                    <li @if(Request::is('admin/form/wizard')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.form.wizard') }}">表单向导</a>
                     </li>
-                    <li>
+                    <li @if(Request::is('admin/form/upload/*')) class="active" @endif>
                         <a href="#">文件上传 <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
-                            <li><a class="J_menuItem" href="form_webuploader.html">百度WebUploader</a>
+                            <li @if(Request::is('admin/form/upload/webuploader')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.form.upload.webuploader') }}">百度WebUploader</a>
                             </li>
-                            <li><a class="J_menuItem" href="form_file_upload.html">DropzoneJS</a>
+                            <li @if(Request::is('admin/form/upload/dropzone')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.form.upload.dropzone') }}">DropzoneJS</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li @if(Request::is('admin/form/editors/*')) class="active" @endif>
                         <a href="#">编辑器 <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
-                            <li><a class="J_menuItem" href="form_editors.html">富文本编辑器</a>
+                            <li @if(Request::is('admin/form/editors/summer')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.form.editors.summer') }}">富文本编辑器</a>
                             </li>
-                            <li><a class="J_menuItem" href="form_simditor.html">simditor</a>
+                            <li @if(Request::is('admin/form/editors/sim')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.form.editors.sim') }}">simditor</a>
                             </li>
-                            <li><a class="J_menuItem" href="form_markdown.html">MarkDown编辑器</a>
+                            <li @if(Request::is('admin/form/editors/markdown')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.form.editors.markdown') }}">MarkDown编辑器</a>
                             </li>
-                            <li><a class="J_menuItem" href="code_editor.html">代码编辑器</a>
+                            <li @if(Request::is('admin/form/editors/code')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.form.editors.code') }}">代码编辑器</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a class="J_menuItem" href="layerdate.html">日期选择器layerDate</a>
+                    <li @if(Request::is('admin/form/layerdate')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.form.layerdate') }}">日期选择器layerDate</a>
                     </li>
                 </ul>
             </li>
