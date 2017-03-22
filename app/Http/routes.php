@@ -51,4 +51,11 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function ($route) 
     $route->get('form/editors/code',['as'=>'admin.form.editors.code','uses'=>'FormController@editorsCode']);
     $route->get('form/layerdate',['as'=>'admin.form.layerdate','uses'=>'FormController@layerDate']);
 
+    //页面部分
+    $route->get('pages/contacts',['as'=>'admin.pages.contacts','uses'=>'PagesController@contacts']);
+    $route->get('pages/profile',['as'=>'admin.pages.profile','uses'=>'PagesController@profile']);
+    $route->get('pages/projects/index',['as'=>'admin.pages.projects.index','uses'=>'PagesController@projectsIndex']);
+    $route->get('pages/projects/show',['as'=>'admin.pages.projects.show','uses'=>'PagesController@projectsShow']);
+    $route->get('pages/teams',['as'=>'admin.pages.teams','uses'=>'PagesController@teams']);
+
 });

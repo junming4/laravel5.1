@@ -129,24 +129,29 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            <li @if(Request::is('admin/pages/*')) class="active" @endif>
                 <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">页面</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a class="J_menuItem" href="contacts.html">联系人</a>
+                    <li @if(Request::is('admin/pages/contacts')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.pages.contacts') }}">联系人</a>
                     </li>
-                    <li><a class="J_menuItem" href="profile.html">个人资料</a>
+                    <li @if(Request::is('admin/pages/profile')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.pages.profile') }}">个人资料</a>
                     </li>
-                    <li>
+                    <li @if(Request::is('admin/pages/projects/*')) class="active" @endif>
                         <a href="#">项目管理 <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
-                            <li><a class="J_menuItem" href="projects.html">项目</a>
+                            <li @if(Request::is('admin/pages/projects/index')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.pages.projects.index') }}">项目</a>
                             </li>
-                            <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
+                            <li @if(Request::is('admin/pages/projects/show')) class="active" @endif>
+                                <a class="J_menuItem" href="{{ route('admin.pages.projects.show') }}">项目详情</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a class="J_menuItem" href="teams_board.html">团队管理</a>
+                    <li @if(Request::is('admin/pages/teams')) class="active" @endif>
+                        <a class="J_menuItem" href="{{ route('admin.pages.teams') }}">团队管理</a>
                     </li>
                     <li><a class="J_menuItem" href="social_feed.html">信息流</a>
                     </li>
